@@ -44,12 +44,12 @@ axios.get('https://api.github.com/users/escttsalo')
 const followersArray = ["tetondan", "dustinmyers", "justsml", "luishrd", "bigknell"];
 followersArray.forEach(item => {
   axios
-  .get(`https://api.github.com/users/${item}`);
+  .get(`https://api.github.com/users/${item}`)
   .then(res => {
     let user = cardMaker(res.data);
     let cards = document.querySelector("div.cards");
     cards.appendChild(user);
-  });
+  })
   .catch(err => {console.log('Looks like we have an error: ', err)});
 });
 
